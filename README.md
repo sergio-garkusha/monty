@@ -261,3 +261,28 @@ julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$
 The opcode `nop` doesn’t do anything :)
 
 1. Usage: `nop`
+
+##### The sub opcode
+
+The opcode `sub` subtracts the top element of the stack from the second top element of the stack.
+
+1. Usage: `sub`
+2. If the stack is less than two element long, print `L<line_number>: can't sub, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
+3. The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+        * the top element of the stack contains the result
+        * the stack is one element shorter
+
+```
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ cat bytecodes/19.m
+push 1
+push 2
+push 10
+push 3
+sub
+pall
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ ./monty bytecodes/19.m
+7
+2
+1
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$
+```
