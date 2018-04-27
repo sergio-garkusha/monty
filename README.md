@@ -66,7 +66,7 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 
 Implement the `push` and `pall` opcodes.
 
-*Monty byte code files*
+##### Monty byte code files
 
 Files containing Monty byte codes usually have the .m extension. Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its argument:
 
@@ -106,7 +106,7 @@ pall This is the end of our program. Monty is awesome!$
 julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$
 ```
 
-*The monty program*
+##### The monty program
 
 1. Usage: `monty file`
 	* where file is the path to the file containing Monty byte code
@@ -120,3 +120,41 @@ julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$
 	* or an error occured
 6. If you can’t malloc anymore, print `Error: malloc failed`, followed by a new line, and exit with status `EXIT_FAILURE`. You have to use `malloc` and `free` and are not allowed to use any other function from `man malloc`
 7. All error messages must be printed on stdout
+
+
+##### The push opcode
+
+The opcode `push` pushes an element to the stack.
+
+1. Usage: `push <int>``
+        * where `<int>` is an integer
+2. If `<int>` is not an integer or if there is no argument to push, print the message `L<line_number>: usage: push integer`, followed by a new line, and exit with the status `EXIT_FAILURE`
+3. You don’t have to deal with overflows. Use the `atoi` function
+
+##### The pall opcode
+
+The opcode `pall` prints all the values on the stack, starting from the top of the stack.
+
+1. Usage: `pall`
+2. Format: see example
+If the stack is empty, don’t print anything
+
+```
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ cat -e bytecodes/00.m
+push 1$
+push 2$
+push 3$
+pall$
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ ./monty bytecodes/00.m
+3
+2
+1
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$
+```
+
+##### The pint opcode
+
+The opcode `pint` prints the value at the top of the stack, followed by a new line.
+
+1. Usage: `pint`
+2. If the stack is empty, print `L<line_number>: can't pint, stack empty`, followed by a new line, and exit with the status `EXIT_FAILURE`
