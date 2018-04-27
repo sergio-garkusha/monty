@@ -200,5 +200,30 @@ julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ ./monty bytecodes/07.m
 2
 1
 1
-julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ 
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$
+```
+
+##### The swap opcode
+
+The opcode `swap` swaps the top two elements of the stack.
+
+1. Usage: `swap`
+2. If the stack is less than two element long, print `L<line_number>: can't swap, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
+
+```
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ cat bytecodes/09.m
+push 1
+push 2
+push 3
+pall
+swap
+pall
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ ./monty bytecodes/09.m
+3
+2
+1
+2
+3
+1
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$
 ```
