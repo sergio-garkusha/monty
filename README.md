@@ -158,3 +158,47 @@ The opcode `pint` prints the value at the top of the stack, followed by a new li
 
 1. Usage: `pint`
 2. If the stack is empty, print `L<line_number>: can't pint, stack empty`, followed by a new line, and exit with the status `EXIT_FAILURE`
+
+```
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ cat bytecodes/06.m
+push 1
+pint
+push 2
+pint
+push 3
+pint
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ ./monty bytecodes/06.m
+1
+2
+3
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$
+```
+
+##### The pop opcode
+
+The opcode pop removes the top element of the stack.
+
+1. Usage: `pop`
+2. If the stack is empty, print `L<line_number>: can't pop an empty stack`, followed by a new line, and exit with the status `EXIT_FAILURE`
+
+```
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ cat bytecodes/07.m
+push 1
+push 2
+push 3
+pall
+pop
+pall
+pop
+pall
+pop
+pall
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ ./monty bytecodes/07.m
+3
+2
+1
+2
+1
+1
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ 
+```
