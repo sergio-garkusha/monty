@@ -255,3 +255,9 @@ julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ ./monty bytecodes/12.m
 1
 julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$
 ```
+
+##### The nop opcode
+
+The opcode `nop` doesn’t do anything :)
+
+1. Usage: `nop`
