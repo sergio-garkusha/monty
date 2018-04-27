@@ -26,6 +26,7 @@ void parse_command(stack_t **stack, char *op, unsigned int line_num)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}
 	};
 
