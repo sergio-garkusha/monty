@@ -20,6 +20,7 @@ void parse_command(stack_t **stack, char *op, unsigned int line_num)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
+		{"div", _div},
 		{NULL, NULL}
 	};
 
