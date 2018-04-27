@@ -11,7 +11,7 @@ void read_file(char *file, stack_t **stack)
 {
 	size_t len;
 	ssize_t read_line;
-	unsigned int line_num = 0;
+	unsigned int num = 0;
 	char *line = NULL;
 	FILE *fd;
 	char *command;
@@ -26,10 +26,10 @@ void read_file(char *file, stack_t **stack)
 	while ((read_line = getline(&line, &len, fd)) != -1)
 	{
 		command = strtok(line, DELIMS);
-		line_num++;
+		num++;
 
 		if (command)
-			parse_command(&(*stack), command, line_num);
+			parse_command(stack, command, num);
 	}
 
 	if (line)

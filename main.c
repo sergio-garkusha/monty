@@ -19,10 +19,12 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
+	head = NULL;
 	global_head = &head;
+
 	read_file(argv[1], &head);
 
 	atexit(global_free);
 
-	return (EXIT_SUCCESS);
+	exit(EXIT_SUCCESS);
 }

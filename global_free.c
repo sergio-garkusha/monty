@@ -1,7 +1,5 @@
 #include "monty.h"
 
-stack_t **global_head;
-
 /**
  * global_free - globally frees memory, previously alocated in the program
  *
@@ -9,17 +7,17 @@ stack_t **global_head;
  */
 void global_free(void)
 {
-	stack_t *tmp1;
-	stack_t *tmp2 = NULL;
+	stack_t *to_free;
+	stack_t *temp = NULL;
 
-	tmp1 = *global_head;
+	to_free = *global_head;
 
-	while (tmp1 != NULL)
+	while (to_free)
 	{
-		tmp2 = tmp1->next;
+		temp = to_free->next;
 
-		free(tmp1);
+		free(to_free);
 
-		tmp1 = tmp2;
+		to_free = temp;
 	}
 }

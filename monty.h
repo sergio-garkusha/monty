@@ -46,10 +46,10 @@ extern stack_t **global_head;
 
 void global_free(void);
 
-void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
-
 void read_file(char *file, stack_t **stack);
 void parse_command(stack_t **stack, char *op, unsigned int line_num);
+
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 
 #endif
