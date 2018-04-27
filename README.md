@@ -227,3 +227,31 @@ julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ ./monty bytecodes/09.m
 1
 julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$
 ```
+
+##### The add opcode
+
+The opcode `add` adds the top two elements of the stack.
+
+1. Usage: `add`
+2. If the stack is less than two element long, print `L<line_number>: can't add, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
+3. The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+        * the top element of the stack contains the result
+        * the stack is one element shorter
+
+```
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ cat bytecodes/12.m
+push 1
+push 2
+push 3
+pall
+add
+pall
+
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$ ./monty bytecodes/12.m
+3
+2
+1
+5
+1
+julien@ubuntu:~/0x18. Stack (LIFO) & queue (FIFO)$
+```
